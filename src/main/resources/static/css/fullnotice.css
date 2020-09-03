@@ -1,0 +1,43 @@
+#ab
+{
+    border:1px solid black;
+    height:350px;
+    margin-bottom:60px;
+}
+.card
+{
+    width:1040px;
+    height:100px;
+    border:1px solid black;
+    justify-content: center;
+}
+@media only screen and (max-width:992px)
+{
+    .card
+    {
+        width:620px;
+        height:100px;
+        border:1px solid black;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width:768px)
+{
+    .card
+    {
+        width:520px;
+        height:100px;
+        border:1px solid black;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width:540px)
+{
+    .card
+    {
+        width:340px;
+        height:100px;
+        border:1px solid black;
+        justify-content: center;
+    }
+}
