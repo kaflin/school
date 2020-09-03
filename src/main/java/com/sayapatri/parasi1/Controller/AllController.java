@@ -53,7 +53,7 @@ public class AllController {
     public String showHome(Model model)
     {
         model.addAttribute("notices",noticeService.findAll());
-        return "Home";
+        return "index";
     }
     @GetMapping("/houseSystem")
     public String showHouseSystem(Notice notice)

@@ -4,10 +4,6 @@ import com.sayapatri.parasi1.Model.feedback;
 import com.sayapatri.parasi1.Repository.FeedbackRepositry;
 import com.sayapatri.parasi1.Service.NoticeService;
 import com.sayapatri.parasi1.Service.feedbackService;
-import com.sayapatri.parasi1.Model.feedback;
-import com.sayapatri.parasi1.Repository.FeedbackRepositry;
-import com.sayapatri.parasi1.Service.NoticeService;
-import com.sayapatri.parasi1.Service.feedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +11,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
@@ -46,7 +41,7 @@ public class FeedbackController {
     {
         message1=null;
         model.addAttribute("notices",noticeService.findAll());
-        return "Home";
+        return "index";
     }
 
 //    @PostMapping("/addFeedback")
@@ -72,7 +67,7 @@ public String addFeedBack(@Valid feedback feedback, BindingResult result, Model 
 {
     if(result.hasErrors())
     {
-        return "Home";
+        return "index";
     }
   feedbackRepositry.save(feedback);
     return "redirect:/";
