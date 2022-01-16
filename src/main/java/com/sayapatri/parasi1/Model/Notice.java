@@ -12,28 +12,22 @@ public class Notice {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-
-
-    @NotBlank(message="Title is mandatory")
+    @NotBlank(message = "Title is mandatory")
     private String title;
 
-
-
-    @NotBlank(message="Message is mandatory")
+    @NotBlank(message = "Message is mandatory")
     private String message;
 
-   @Temporal(TemporalType.DATE)
-   private Date createdDate=new Date(System.currentTimeMillis());
+    @Temporal(TemporalType.DATE)
+    private Date createdDate = new Date(System.currentTimeMillis());
 
-    public Notice()
-    {
-    }
-    public Notice(String title,String message)
-    {
-        this.title=title;
-        this.message=message;
+    public Notice() {
     }
 
+    public Notice(String title, String message) {
+        this.title = title;
+        this.message = message;
+    }
 
     public long getId() {
         return id;
@@ -58,7 +52,6 @@ public class Notice {
     public void setMessage(String message) {
         this.message = message;
     }
-
 
     public Date getCreatedDate() {
         return createdDate;

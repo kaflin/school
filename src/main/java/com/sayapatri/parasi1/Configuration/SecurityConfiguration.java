@@ -9,55 +9,36 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-
 @Configuration
 @EnableWebSecurity
-//@EnableGlobalMethodSecurity(securedEnabled = true, proxyTargetClass = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
                 .withUser("admin").password(passwordEncoder().encode("admin")).roles("ADMIN");
-
-
-
     }
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                 .authorizeRequests()
-                .antMatchers("/feedBackList","/adminlist").hasRole("ADMIN")
-                 .antMatchers("/**").permitAll()
-                 .anyRequest().authenticated()
-                 .and()
-                 .formLogin();
-//                @.loginPage("/login")
-//                .usernameParameter("u").passwordParameter("p")
-//                .permitAll()
-//                .and()
-//                .logout().permitAll();
+                .authorizeRequests()
+                .antMatchers("/feedBackList", "/adminlist","/form").hasRole("ADMIN")
+                .antMatchers("/**").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin();
+        // @.loginPage("/login")
+        // .usernameParameter("u").passwordParameter("p")
+        // .permitAll()
+        // .and()
+        // .logout().permitAll();
 
     }
-
-
 
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-
 }
-
-
-
-
-
-
-
-
-
-

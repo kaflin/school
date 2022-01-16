@@ -15,6 +15,9 @@
 </head>
 <body>
   <div class="container" style="border:1px solid red;width:500px;height:600px;margin-top:5px;background-color:aqua;">
+    <form th:action="@{/logout}"  method="post">
+      <input type="submit" class="btn btn-primary" value="Logout" style="margin-left: 390px;margin-top: 5px;" />
+  </form>
     <form action="#" th:action="@{/add}" th:object="${notice}" method="post">
         <div class="form-group">
           <label for="title" class="col-form-label">Title</label>
@@ -27,7 +30,9 @@
             <textarea class="form-control" id="message" rows="4" th:field="*{message}" placeholder="Enter the message to be displayed"></textarea><span th:if="${#fields.hasErrors('message')}" th:errors="*{message}" class="text-danger"></span>
           </div>
           <input type="submit" class="btn btn-primary" value="Add Notice">
+        
         </form>
+        
   </div>
 
     

@@ -24,10 +24,7 @@ public class NoticeController {
     @Autowired
     private NoticeRepository noticeRepository;
 
-
-
-
-    @GetMapping("/form")
+   @GetMapping("/form")
     public String showNoticeForm(Notice notice)
     {
       return "form";
