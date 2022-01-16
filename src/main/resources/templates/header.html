@@ -171,28 +171,6 @@
         </div>
 
     </div>
-    <!--end of footer-->
-    <script>
-        function validateMyForm()
-{
-      var phone = document.getElementById("mobile").value;
-            var message = document.getElementById('message');
-            var goodColor = "#0C6";
-            var badColor = "#FF9B37";
-            if(phone.length!=10){
-                message.style.color = badColor;
-                message.innerHTML = "required 10 digits, match requested format!"
-                return false;
-            }
-            else{
-            message.style.color = goodColor;
-            message.innerHTML = ""
-            return true;
-            }
-        
-    }
-        
-        </script>
 </div>
 <!--logo-->
 <div th:fragment="logo">
@@ -215,3 +193,24 @@
 </div>
 
 </html>
+   <!--end of footer-->
+   <script>
+    function validateMyForm()
+{
+  var phone = document.getElementById("mobile").value;
+        var message = document.getElementById('message');
+        var goodColor = "#0C6";
+        var badColor = "#FF9B37";
+        if(phone.length!=10){
+            message.style.color = badColor;
+            message.innerHTML = "required 10 digits, match requested format!"
+            return false;
+        }
+        else{
+        message.style.color = goodColor;
+        message.innerHTML = ""
+        return true;
+        }
+    
+}
+     </script>
