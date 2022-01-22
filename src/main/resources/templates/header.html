@@ -66,7 +66,7 @@
 
     <!--Footer-->
 
-    <div class="container-fluid" style="margin:0;padding:0;">
+    <div class="container-fluid" style="margin:auto;padding:0;">
 
         <div class="wrapper22">
             <div class="row">
@@ -165,6 +165,7 @@
 <!--end of footer-->
 <!--logo-->
 <div th:fragment="logo">
+    <!-- <nav class="navbar navbar-inverse navbar-fixed-top"> -->
     <div class="container">
         <div class="wrapper1">
             <div class="row">
@@ -179,26 +180,28 @@
             </div>
         </div>
     </div>
-    <!--end of logo-->
+    <!-- </nav> -->
+</div>
+<!--end of logo-->
 
-    <script>
-        function validateMyForm() {
-            var phone = document.getElementById("mobile").value;
-            var message = document.getElementById('message');
-            var goodColor = "#0C6";
-            var badColor = "#FF9B37";
-            if (phone.length != 10) {
-                message.style.color = badColor;
-                message.innerHTML = "required 10 digits, match requested format!"
-                return false;
-            } else {
-                message.style.color = goodColor;
-                message.innerHTML = ""
-                return true;
-            }
-
+<script>
+    function validateMyForm() {
+        var phone = document.getElementById("mobile").value;
+        var message = document.getElementById('message');
+        var goodColor = "#0C6";
+        var badColor = "#FF9B37";
+        if (phone.length != 10) {
+            message.style.color = badColor;
+            message.innerHTML = "required 10 digits, match requested format!"
+            return false;
+        } else {
+            message.style.color = goodColor;
+            message.innerHTML = ""
+            return true;
         }
-    </script>
+
+    }
+</script>
 </div>
 
 </html>
