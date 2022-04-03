@@ -64,87 +64,85 @@
 
     <div class="container-fluid" style="margin:0;padding:0;">
 
-        <div class="wrapper22">
-            <div class="row">
+        <div class="row" style="background-color: rgb(50, 77, 75);">
 
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <img src="../images/logo.png" class="img-rounded" alt="logo of sayapatri" style="width:120px;height:100px;margin-left:35px;margin-top:20px;">
-                    <h3 id="eg2"><b>xxxxxxxx Higher Secondary School</b></h3>
-                    <p id="eg3"><b>Ramgram-1,Parasi,Nepal</b></p>
-                    <br><br>
-                    <p id="eg4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-                        specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                        passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<a th:href="@{/readmore}" style="color:brown;">[Read More...]</a></p>
-                </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <img src="../images/logo.png" class="img-rounded" alt="logo of sayapatri" style="width:120px;height:100px;margin-left:35px;margin-top:20px;">
+                <h3 id="eg2"><b>xxxxxxxx Higher Secondary School</b></h3>
+                <p id="eg3"><b>Ramgram-1,Parasi,Nepal</b></p>
+                <br><br>
+                <p id="eg4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
+                    more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<a th:href="@{/readmore}" style="color:brown;">[Read More...]</a></p>
+            </div>
 
-                <div class="col-lg-4 col-md-12 col-sm-12">
-                    <h2 id="a171"><b>Contact Us</b></h2>
-                    <i class="fa fa-map-marker" style="font-size:20px;color:white; margin-left:10px;">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <h2 id="a171"><b>Contact Us</b></h2>
+                <i class="fa fa-map-marker" style="font-size:20px;color:white; margin-left:10px;">
                         <h4 id="z121">G.P.O.Box No:1887,Parasi</h4>
                     </i>
-                    <br>
-                    <i class="fa fa-phone" style="font-size:20px;color:white;margin-left:10px;">
+                <br>
+                <i class="fa fa-phone" style="font-size:20px;color:white;margin-left:10px;">
                         <h4 id="z121">015230088,014555163,9852311582</h4>
                     </i>
-                    <br>
-                    <i class="fa fa-mobile-phone" style="font-size:20px; color:white;margin-left:10px;">
+                <br>
+                <i class="fa fa-mobile-phone" style="font-size:20px; color:white;margin-left:10px;">
                         <h4 id="z121">078-520520</h4>
                     </i>
-                    <br>
-                    <i class="fa fa-envelope" style="font-size:20px;color:white;margin-left:10px;">
+                <br>
+                <i class="fa fa-envelope" style="font-size:20px;color:white;margin-left:10px;">
                         <h4 id="z121">info@shsh.edu.np(PA to Principal)</h4>
                     </i>
-                    <br>
-                    <i class="fa fa-envelope" style="font-size:20px; color:white;margin-left:10px;">
+                <br>
+                <i class="fa fa-envelope" style="font-size:20px; color:white;margin-left:10px;">
                         <h4 id="z121">Principalinfo@shsh.edu.np(For direct communication with Principal Sir)</h4>
                     </i>
-                </div>
+            </div>
 
 
 
 
-                <div class="col-lg-4 col-md-12 col-sm-12">
+            <div class="col-lg-4 col-md-12 col-sm-12">
 
-                    <h2 id="a171"><b>Feedback Form</b></h2>
-
-
-
-                    <form th:name="myForm" action="#" th:action="@{/addFeedback}" th:object="${feedback}" onsubmit="return validateMyForm();" id="kj" method="POST">
+                <h2 id="a171"><b>Feedback Form</b></h2>
 
 
 
-                        <div class="form-group">
-                            <input type="email" th:name="email" placeholder="Email Address" class="form-control">
-
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control rounded-0" th:name="message" id="exampleFormControlTextarea2" rows="3" placeholder="Message" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" class="form-control" th:name="phone" id="mobile" placeholder="PhoneNo:+977-xxxxxxxxxx" maxlength="10" required>
-                            <span id="message"></span>
-
-                        </div>
-                        <button type="submit" class="btn btn-default" style="width:100px;height:45px;margin-right:500px;">Submit</button>
-                    </form>
-
-                </div>
+                <form th:name="myForm" action="#" th:action="@{/addFeedback}" th:object="${feedback}" onsubmit="return validateMyForm();" id="kj" method="POST">
 
 
+
+                    <div class="form-group">
+                        <input type="email" th:name="email" placeholder="Email Address" class="form-control">
+
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control rounded-0" th:name="message" id="exampleFormControlTextarea2" rows="3" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" th:name="phone" id="mobile" placeholder="PhoneNo:+977-xxxxxxxxxx" maxlength="10" required>
+                        <span id="message"></span>
+
+                    </div>
+                    <button type="submit" class="btn btn-default" style="width:100px;height:45px;margin-right:500px;">Submit</button>
+                </form>
 
             </div>
 
+
+
         </div>
+
+
     </div>
 </div>
 <!--end of footer-->
 <!--logo-->
 <div th:fragment="logo">
-    <!-- <nav class="navbar navbar-inverse navbar-fixed-top"> -->
     <div class="container">
         <div class="wrapper1">
             <div class="row">
-                <div class="col-lg-12 col-md-12">
+                <div class="col-lg-8 col-md-8">
                     <img src="../images/logo.png" class="img-rounded" alt="logo of sayapatri" style="width:120px;height:100px;">
                     <!-- </div>
                 <div class="col-lg-10 col-md-10"> -->
@@ -155,7 +153,6 @@
             </div>
         </div>
     </div>
-    <!-- </nav> -->
 </div>
 <!--end of logo-->
 
@@ -176,6 +173,19 @@
         }
 
     }
+    setInterval(() => {
+        d = new Date(); //object of date()
+        hr = d.getHours();
+        min = d.getMinutes();
+        sec = d.getSeconds();
+        hr_rotation = 30 * hr + min / 2; //converting current time
+        min_rotation = 6 * min;
+        sec_rotation = 6 * sec;
+
+        hour.style.transform = `rotate(${hr_rotation}deg)`;
+        minute.style.transform = `rotate(${min_rotation}deg)`;
+        second.style.transform = `rotate(${sec_rotation}deg)`;
+    }, 1000);
 </script>
 </div>
 
