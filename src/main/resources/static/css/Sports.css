@@ -1,8 +1,9 @@
-body
-{
+body {
     font-family: "Times New Roman", Times, serif;
-    color:black;
+    color: black;
+    overflow-x: hidden;
 }
+
 #ab {
     border: 1px solid black;
     height: 500px;

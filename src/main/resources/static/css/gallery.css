@@ -1,33 +1,42 @@
-body
-{
+body {
     font-family: "Times New Roman", Times, serif;
-    color:black;
+    color: black;
+    overflow-x: hidden;
 }
-#ab
-{
-    border:1px solid black;
-    height:920px;
+
+#ab {
+    border: 1px solid black;
+    height: 920px;
 }
+
 * {
     box-sizing: border-box;
 }
 
+
 /* Position the image container (needed to position the left and right arrows) */
+
 .container {
     position: relative;
 }
 
+
 /* Hide the images by default */
+
 .mySlides {
     display: none;
 }
 
+
 /* Add a pointer when hovering over the thumbnail images */
+
 .cursor {
     cursor: pointer;
 }
 
+
 /* Next & previous buttons */
+
 .prev,
 .next {
     cursor: pointer;
@@ -44,19 +53,25 @@ body
     -webkit-user-select: none;
 }
 
+
 /* Position the "next button" to the right */
+
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
+
 /* On hover, add a black background color with a little bit see-through */
+
 .prev:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+
 /* Number text (1/3 etc) */
+
 .numbertext {
     color: #f2f2f2;
     font-size: 12px;
@@ -65,7 +80,9 @@ body
     top: 0;
 }
 
+
 /* Container for image text */
+
 .caption-container {
     text-align: center;
     background-color: #222;
@@ -79,13 +96,17 @@ body
     clear: both;
 }
 
+
 /* Six columns side by side */
+
 .column {
     float: left;
     width: 16.66%;
 }
 
+
 /* Add a transparency effect for thumnbail images */
+
 .demo {
     opacity: 0.6;
 }

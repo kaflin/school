@@ -1,20 +1,18 @@
-body{
+body {
     font-family: "Times New Roman", Times, serif;
-    color:Black;
+    color: Black;
+    overflow-x: hidden;
 }
-#a
-{
-    
-    margin-left:35px;
 
+#a {
+    margin-left: 35px;
 }
-#ab
-{
-    border:1px solid black;
-    height:200px;
+
+#ab {
+    border: 1px solid black;
+    height: 200px;
 }
-#b
-{
-    
-    margin-left:45px;
+
+#b {
+    margin-left: 45px;
 }
