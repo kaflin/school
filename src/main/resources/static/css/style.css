@@ -144,7 +144,7 @@ body {
     display: block;
 }
 
-#h2 {
+.textSizeAndFont {
     text-align: center;
     color: rgb(215, 224, 235);
     font-family: "Times New Roman,Times,serif";
