@@ -68,7 +68,7 @@ body {
     /* border:1px solid black; */
 }
 
-#z23 {
+.gallery{
     width: 100%;
     height: 252px;
 }
@@ -154,7 +154,7 @@ body {
     height: 250px;
 }
 
-#z23 {
+.gallery {
     height: 245px;
 }
 
@@ -310,7 +310,7 @@ body {
         margin-left: 35px;
         font-family: "Times New Roman,Times,serif";
     }
-    #z23 {
+    .gallery {
         height: 250px;
     }
     .dot {
