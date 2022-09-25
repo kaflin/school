@@ -250,7 +250,7 @@ body {
     font-family: "Times New Roman,Times,serif";
 }
 
-#kj {
+#feedBack {
     margin-right: 15px;
     margin-left: 10px;
 }
@@ -271,6 +271,9 @@ body {
         margin-left: 35px;
         font-family: "Times New Roman,Times,serif";
         color: rgb(215, 224, 235);
+    }
+    #feedBackButton{
+        margin-left:0px;
     }
 }
 
@@ -321,6 +324,9 @@ body {
         /* margin-top:25px; */
         margin: auto;
         display: block;
+    }
+    #feedBackButton{
+        margin-left:0px;
     }
 }
 
@@ -446,6 +452,9 @@ body {
         margin: auto;
         display: block;
     }
+    #feedBackButton{
+        margin-left:0px;
+    }
 }
 
 @media only screen and (max-width:576px) {
@@ -498,5 +507,8 @@ body {
     display: inline-block; */
         margin: auto;
         display: block;
+    }
+    #feedBackButton{
+        margin-left:0px;
     }
 }
