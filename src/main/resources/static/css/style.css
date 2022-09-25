@@ -92,21 +92,6 @@ body {
     background-color: rgb(2, 51, 51);
     color: white;
 }
-
-.wrapper12 {
-    width: 100%;
-    height: 545px;
-    /* border:1px solid black; */
-    background-color: rgb(2, 51, 51);
-}
-
-.wrapper12:hover {
-    background-color: rgb(4, 13, 43);
-    opacity: 1;
-    transform: scale(1.1);
-    transition: .1s;
-}
-
 .wrapper13 {
     width: 100%;
     height: 545px;
@@ -121,21 +106,6 @@ body {
     transform: scale(1.1);
     transition: .1s;
 }
-
-.wrapper14 {
-    width: 100%;
-    height: 545px;
-    /* border:1px solid black; */
-    background-color: rgb(2, 51, 51);
-}
-
-.wrapper14:hover {
-    background-color: rgb(1, 46, 44);
-    opacity: 1;
-    transform: scale(1.1);
-    transition: .1s;
-}
-
 #z5 {
     height: 600px;
     background-color: skyblue;
@@ -148,7 +118,7 @@ body {
     /* border:1px solid black; */
 }
 
-#z6 {
+.z6 {
     margin-top: 20px;
     height: 300px;
 }
@@ -159,96 +129,11 @@ body {
 }
 
 .wrapper6:hover {
-    background-color: rgb(4, 13, 43);
+    background-color: rgb(5, 47, 66);
     opacity: 1;
     transform: scale(1.1);
     transition: .1s;
 }
-
-.wrapper7 {
-    height: 298px;
-    background-color: rgb(2, 51, 51);
-}
-
-.wrapper7:hover {
-    background-color: rgb(4, 13, 43);
-    opacity: 1;
-    transform: scale(1.1);
-    transition: .1s;
-}
-
-.wrapper8a {
-    height: 298px;
-    background-color: rgb(2, 51, 51);
-}
-
-.wrapper8a:hover {
-    background-color: rgb(4, 13, 43);
-    opacity: 1;
-    transform: scale(1.1);
-    transition: .1s;
-}
-
-.wrapper9a {
-    height: 298px;
-    background-color: rgb(2, 51, 51);
-}
-
-.wrapper9a:hover {
-    background-color: rgb(4, 13, 43);
-    opacity: 1;
-    transform: scale(1.1);
-    transition: .1s;
-}
-
-.wrapper10 {
-    height: 298px;
-    background-color: rgb(2, 51, 51);
-}
-
-.wrapper10:hover {
-    background-color: rgb(4, 13, 43);
-    opacity: 1;
-    transform: scale(1.1);
-    transition: .1s;
-}
-
-.wrapper11 {
-    height: 298px;
-    background-color: rgb(2, 51, 51);
-}
-
-.wrapper11:hover {
-    background-color: rgb(4, 13, 43);
-    opacity: 1;
-    transform: scale(1.1);
-    transition: .1s;
-}
-
-.wrapper12a {
-    height: 298px;
-    background-color: rgb(2, 51, 51);
-}
-
-.wrapper12a:hover {
-    background-color: rgb(4, 13, 43);
-    opacity: 1;
-    transform: scale(1.1);
-    transition: .1s;
-}
-
-.wrapper13a {
-    height: 298px;
-    background-color: rgb(2, 51, 51);
-}
-
-.wrapper13a:hover {
-    background-color: rgb(4, 13, 43);
-    opacity: 1;
-    transform: scale(1.1);
-    transition: .1s;
-}
-
 .dot {
     height: 100px;
     width: 100px;
@@ -572,20 +457,13 @@ body {
         font-family: "Times New Roman,Times,serif";
         /* color:black; */
     }
-    #z6 {
+    .z6 {
         height: 300px;
     }
     .wrapper6 {
         background-color: rgb(48, 57, 95);
     }
     .wrapper6:hover {
-        background-color: rgb(36, 50, 56);
-        opacity: 1;
-    }
-    .wrapper7 {
-        background-color: rgb(27, 138, 189);
-    }
-    .wrapper7:hover {
         background-color: rgb(36, 50, 56);
         opacity: 1;
     }
@@ -603,20 +481,6 @@ body {
     }
     .wrapper9:hover {
         background-color: rgb(3, 65, 45);
-        opacity: 1;
-    }
-    .wrapper10 {
-        background-color: rgb(17, 168, 42);
-    }
-    .wrapper10:hover {
-        background-color: rgb(36, 50, 56);
-        opacity: 1;
-    }
-    .wrapper11 {
-        background-color: rgb(2, 51, 51);
-    }
-    .wrapper11:hover {
-        background-color: rgb(36, 50, 56);
         opacity: 1;
     }
     .wrapper12 {
@@ -647,7 +511,7 @@ body {
 }
 
 @media only screen and (max-width:576px) {
-    #z6 {
+    .z6 {
         height: 300px;
     }
     .wrapper6 {
@@ -655,13 +519,6 @@ body {
     }
     .wrapper6:hover {
         background-color: rgb(4, 13, 43);
-        opacity: 1;
-    }
-    .wrapper7 {
-        background-color: rgb(2, 51, 51);
-    }
-    .wrapper7:hover {
-        background-color: rgb(5, 47, 66);
         opacity: 1;
     }
     .wrapper8 {
@@ -678,20 +535,7 @@ body {
         background-color: rgb(3, 65, 45);
         opacity: 1;
     }
-    .wrapper10 {
-        background-color: rgb(2, 51, 51);
-    }
-    .wrapper10:hover {
-        background-color: rgb(112, 224, 133);
-        opacity: 1;
-    }
-    .wrapper11 {
-        background-color: rgb(2, 51, 51);
-    }
-    .wrapper11:hover {
-        background-color: rgb(57, 77, 2);
-        opacity: 1;
-    }
+
     .wrapper12 {
         background-color: rgb(2, 51, 51);
     }
