@@ -4,11 +4,11 @@ body {
     overflow-x: hidden;
 }
 
-#a {
+#adminProcedure {
     margin-left: 35px;
 }
 
-#ab {
+#infra {
     border: 1px solid black;
     height: 200px;
 }

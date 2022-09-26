@@ -65,7 +65,7 @@ body {
     height: 200px;
 }
 
-#c {
+#faculty {
     /* border:1px solid blue; */
     height: 195px;
 }
@@ -131,7 +131,7 @@ body {
         /* border:1px solid black; */
         height: 850px;
     }
-    #a {
+    #adminProcedure{
         height: 200px;
         /* border:1px solid red; */
     }
@@ -232,7 +232,7 @@ body {
         /* border:1px solid black; */
         height: 2428px;
     }
-    #a {
+    #adminProcedure{
         height: 200px;
         /* border:1px solid red; */
     }

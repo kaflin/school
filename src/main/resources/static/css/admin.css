@@ -4,7 +4,7 @@ body {
     overflow-x: hidden;
 }
 
-#a {
+#adminProcedure{
     margin-top: 55px;
     text-align: center;
 }
@@ -14,7 +14,7 @@ body {
     margin-left: 30px;
 }
 
-#c {
+.adminProcedure_1 {
     margin-left: 30px;
 }
 
