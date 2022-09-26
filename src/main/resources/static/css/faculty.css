@@ -4,12 +4,12 @@ body {
     overflow-x: hidden;
 }
 
-#ab {
+.CardOnly {
     /* border:1px solid black; */
     height: 440px;
 }
 
-#a {
+.flipCard {
     height: 200px;
     /* border:1px solid red; */
 }
@@ -60,7 +60,7 @@ body {
     transform: rotateY(180deg);
 }
 
-#b {
+.facultyIDBack_1 {
     width: 165px;
     height: 200px;
 }
@@ -70,7 +70,7 @@ body {
     height: 195px;
 }
 
-#ca {
+.faculty_flip {
     /* border:1px solid black; */
     height: 195px;
 }
@@ -80,19 +80,19 @@ body {
     height: 195px;
 }
 
-#cab {
+.facultyID {
     width: 360px;
     height: 195px;
 }
 
-#cab1 {
+.faculty_flip_1 {
     background-color: transparent;
     width: 360px;
     height: 195px;
     perspective: 1000px;
 }
 
-#cab2 {
+.faculty_flip_2 {
     position: relative;
     width: 360px;
     height: 195px;
@@ -102,12 +102,12 @@ body {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-#cab1:hover #cab2 {
+.faculty_flip_1 :hover .faculty_flip_2 {
     transform: rotateY(180deg);
 }
 
-#cab3,
-#cab4 {
+.faculty_flip_3,
+.facultyIDBack {
     position: absolute;
     width: 360px;
     height: 195px;
@@ -115,19 +115,19 @@ body {
     backface-visibility: hidden;
 }
 
-#cab3 {
+.faculty_flip_3 {
     background-color: #bbb;
     color: black;
 }
 
-#cab4 {
+.facultyIDBack {
     background-color: #2980b9;
     color: white;
     transform: rotateY(180deg);
 }
 
 @media only screen and (min-width:768px) and (max-width:992px) {
-    #ab {
+    .CardOnly {
         /* border:1px solid black; */
         height: 850px;
     }
@@ -139,7 +139,7 @@ body {
         /* border:1px solid blue; */
         height: 193px;
     }
-    #b {
+    .facultyIDBack_1 {
         width: 220px;
         height: 193px;
     }
@@ -182,17 +182,17 @@ body {
         /* border:1px solid green; */
         height: 192px;
     }
-    #cab {
+    .facultyID {
         width: 220px;
         height: 192px;
     }
-    #cab1 {
+    .faculty_flip_1  {
         background-color: transparent;
         width: 220px;
         height: 192px;
         perspective: 1000px;
     }
-    #cab2 {
+    .faculty_flip_2 {
         position: relative;
         width: 220px;
         height: 192px;
@@ -201,22 +201,22 @@ body {
         transform-style: preserve-3d;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     }
-    #cab1:hover #cab2 {
+    .faculty_flip_1 :hover .faculty_flip_2 {
         transform: rotateY(180deg);
     }
-    #cab3,
-    #cab4 {
+    .faculty_flip_3,
+    .facultyIDBack {
         position: absolute;
         width: 220px;
         height: 192px;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
     }
-    #cab3 {
+    .faculty_flip_3 {
         background-color: #bbb;
         color: black;
     }
-    #cab4 {
+    .facultyIDBack {
         background-color: #2980b9;
         color: white;
         transform: rotateY(180deg);
@@ -228,7 +228,7 @@ body {
         /* border:1px solid blue; */
         height: 193px;
     }
-    #ab {
+    .CardOnly {
         /* border:1px solid black; */
         height: 2428px;
     }
@@ -236,7 +236,7 @@ body {
         height: 200px;
         /* border:1px solid red; */
     }
-    #b {
+    .facultyIDBack_1 {
         width: 666px;
         height: 193px;
     }
@@ -279,25 +279,21 @@ body {
         /* border:1px solid blue; */
         height: 600px;
     }
-    #ca {
-        /* border:1px solid black; */
-        height: 199px;
-    }
     .wrapper1001 {
         /* border:1px solid green; */
         height: 192px;
     }
-    #cab {
+    .facultyID {
         width: 666px;
         height: 191px;
     }
-    #cab1 {
+    .faculty_flip_1  {
         background-color: transparent;
         width: 6px;
         height: 190px;
         perspective: 1000px;
     }
-    #cab2 {
+    .faculty_flip_2 {
         position: relative;
         width: 666px;
         height: 190px;
@@ -306,22 +302,22 @@ body {
         transform-style: preserve-3d;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     }
-    #cab1:hover #cab2 {
+    .faculty_flip_1 :hover .faculty_flip_2 {
         transform: rotateY(180deg);
     }
-    #cab3,
-    #cab4 {
+    .faculty_flip_3,
+    .facultyIDBack {
         position: absolute;
         width: 666px;
         height: 190px;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
     }
-    #cab3 {
+    .faculty_flip_3 {
         background-color: #bbb;
         color: black;
     }
-    #cab4 {
+    .facultyIDBack {
         background-color: #2980b9;
         color: white;
         transform: rotateY(180deg);
