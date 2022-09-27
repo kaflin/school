@@ -11,7 +11,7 @@
     border:1px solid black;
     justify-content: center;
 }
-@media only screen and (max-width:992px)
+@media only screen and (max-width:1199px)
 {
     .card
     {
@@ -37,6 +37,16 @@
     {
         width:340px;
         height:100px;
+        border:1px solid black;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width:373px)
+{
+    .card
+    {
+        width:280px;
+        height:134px;
         border:1px solid black;
         justify-content: center;
     }
