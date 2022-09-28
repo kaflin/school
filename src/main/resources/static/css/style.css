@@ -179,7 +179,7 @@ body {
     /* border:1px solid black;  */
 }
 
-#abc131 {
+.resourceElement {
     height: 240px;
     /* border:1px solid red; */
 }
@@ -231,20 +231,20 @@ body {
     margin-left: 10px
 }
 
-#eg2 {
+#schoolHeader {
     margin-left: 160px;
     margin-top: -95px;
     color: white;
     font-family: "Times New Roman,Times,serif";
 }
 
-#eg3 {
+#addressHeader {
     margin-left: 160px;
     color: white;
     font-family: "Times New Roman,Times,serif";
 }
 
-#eg4 {
+#aboutSchool {
     margin-left: 10px;
     color: white;
     font-family: "Times New Roman,Times,serif";
