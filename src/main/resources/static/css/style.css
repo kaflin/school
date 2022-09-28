@@ -216,7 +216,7 @@ body {
     display: block;
 }
 
-#z121 {
+.contact {
     /* border:1px solid red; */
     margin-left: 35px;
     color: white;
@@ -225,7 +225,7 @@ body {
     /* line-break:auto; */
 }
 
-#a171 {
+.contactAndFeedBack {
     font-family: "Times New Roman,Times,serif";
     color: white;
     margin-left: 10px
@@ -427,7 +427,7 @@ body {
         margin: auto;
         display: block;
     }
-    #z121 {
+    .contact {
         /* border:1px solid  red; */
         margin-left: 35px;
         line-break: auto;
