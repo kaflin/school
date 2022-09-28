@@ -51,7 +51,7 @@ body {
     margin-top: -85px;
 }
 
-#abcd {
+#notice {
     font-family: "Times New Roman", Times, serif;
     color: rgb(17, 16, 17);
 }
@@ -118,7 +118,7 @@ body {
     /* border:1px solid black; */
 }
 
-.z6 {
+.schoolFeature {
     margin-top: 20px;
     height: 300px;
 }
@@ -346,7 +346,7 @@ body {
         height: 1650px;
         /* border:1px solid black; */
     }
-    #abcd {
+    #notice {
         /* margin-left:155px; */
         font-family: "Times New Roman", Times, serif;
     }
@@ -440,7 +440,7 @@ body {
         font-family: "Times New Roman,Times,serif";
         /* color:black; */
     }
-    .z6 {
+    .schoolFeature {
         height: 300px;
     }
     .wrapper6 {
@@ -469,7 +469,7 @@ body {
 }
 
 @media only screen and (max-width:576px) {
-    .z6 {
+    .schoolFeature {
         height: 300px;
     }
     .wrapper6 {
