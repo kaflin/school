@@ -222,8 +222,104 @@ body {
         transform: rotateY(180deg);
     }
 }
+@media only screen and (min-width:992px) and (max-width:1199px) {
+    .CardOnly {
+        /* border:1px solid black; */
+        height: 850px;
+    }
+    #adminProcedure{
+        height: 200px;
+        /* border:1px solid red; */
+    }
+    .wrapper1000 {
+        /* border:1px solid blue; */
+        height: 193px;
+    }
+    .facultyIDBack_1 {
+        width: 293px;
+        height: 193px;
+    }
+    .flip-card {
+        background-color: transparent;
+        width: 293px;
+        height: 193px;
+        perspective: 1000px;
+    }
+    .flip-card-inner {
+        position: relative;
+        width: 132px;
+        height: 193px;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        width: 132px;
+        height: 193px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    .flip-card-front {
+        background-color: #bbb;
+        color: black;
+    }
+    .flip-card-back {
+        background-color: #2980b9;
+        color: white;
+        transform: rotateY(180deg);
+    }
+    .wrapper1001 {
+        /* border:1px solid green; */
+        height: 192px;
+    }
+    .facultyID {
+        width: 293px;
+        height: 192px;
+    }
+    .faculty_flip_1  {
+        background-color: transparent;
+        width: 293px;
+        height: 192px;
+        perspective: 1000px;
+    }
+    .faculty_flip_2 {
+        position: relative;
+        width: 293px;
+        height: 192px;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    .faculty_flip_1 :hover .faculty_flip_2 {
+        transform: rotateY(180deg);
+    }
+    .faculty_flip_3,
+    .facultyIDBack {
+        position: absolute;
+        width: 293px;
+        height: 192px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    .faculty_flip_3 {
+        background-color: #bbb;
+        color: black;
+    }
+    .facultyIDBack {
+        background-color: #2980b9;
+        color: white;
+        transform: rotateY(180deg);
+    }
+}
 
-@media only screen and (min-width:200px) and (max-width:768px) {
+@media only screen and (max-width:767px) {
     .wrapper1000 {
         /* border:1px solid blue; */
         height: 193px;
@@ -242,13 +338,13 @@ body {
     }
     .flip-card {
         background-color: transparent;
-        width: 666px;
+        width: 220px;
         height: 193px;
         perspective: 1000px;
     }
     .flip-card-inner {
         position: relative;
-        width: 666px;
+        width: 220px;
         height: 193px;
         text-align: center;
         transition: transform 0.6s;
@@ -261,7 +357,7 @@ body {
     .flip-card-front,
     .flip-card-back {
         position: absolute;
-        width: 666px;
+        width: 220px;
         height: 193px;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
@@ -289,14 +385,14 @@ body {
     }
     .faculty_flip_1  {
         background-color: transparent;
-        width: 6px;
+        width:737px;
         height: 190px;
         perspective: 1000px;
     }
     .faculty_flip_2 {
         position: relative;
-        width: 666px;
-        height: 190px;
+        width: 737px;
+        height: 192px;
         text-align: center;
         transition: transform 0.6s;
         transform-style: preserve-3d;
@@ -308,8 +404,8 @@ body {
     .faculty_flip_3,
     .facultyIDBack {
         position: absolute;
-        width: 666px;
-        height: 190px;
+        width: 737px;
+        height: 192px;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
     }
