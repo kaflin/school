@@ -1,2 +1,2 @@
-# Making of School Website using Java,Thymeleaf,HTML,CSS ,JQUERY and JavaScript
+# This is School Website which is still in beta stage.Technology used are: Java,Thymeleaf,HTML,CSS,JQUERY and JavaScript
  
