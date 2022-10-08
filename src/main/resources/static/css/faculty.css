@@ -322,11 +322,11 @@ body {
 @media only screen and (max-width:767px) {
     .wrapper1000 {
         /* border:1px solid blue; */
-        height: 193px;
+        height: 195px;
     }
     .CardOnly {
         /* border:1px solid black; */
-        height: 2428px;
+        height: 2640px;
     }
     #adminProcedure{
         height: 200px;
@@ -344,7 +344,7 @@ body {
     }
     .flip-card-inner {
         position: relative;
-        width: 220px;
+        width: 736px;
         height: 193px;
         text-align: center;
         transition: transform 0.6s;
@@ -357,7 +357,7 @@ body {
     .flip-card-front,
     .flip-card-back {
         position: absolute;
-        width: 220px;
+        width: 733px;
         height: 193px;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
