@@ -3,7 +3,9 @@ package com.sayapatri.parasi1.Model;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Notice {
@@ -21,12 +23,17 @@ public class Notice {
     @Temporal(TemporalType.DATE)
     private Date createdDate = new Date(System.currentTimeMillis());
 
+    @OneToMany(mappedBy = "notice", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Attachments> attachments = new ArrayList<>();
+
     public Notice() {
     }
 
-    public Notice(String title, String message) {
+    public Notice(String title, String message,List<Attachments> attachments) {
         this.title = title;
         this.message = message;
+        this.attachments = attachments;
+
     }
 
     public long getId() {
@@ -60,4 +67,13 @@ public class Notice {
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
+
+    public List<Attachments> getAttachments() {
+        return attachments;
+    }
+
+    public void setAttachments(List<Attachments> attachments) {
+        this.attachments = attachments;
+    }
+
 }
