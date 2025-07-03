@@ -9,5 +9,4 @@ public class Parasi1Application {
     public static void main(String[] args) {
         SpringApplication.run(Parasi1Application.class, args);
     }
-
 }

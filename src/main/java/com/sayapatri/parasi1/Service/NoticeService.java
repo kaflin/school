@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -16,17 +17,18 @@ public class NoticeService {
     @Autowired
     private NoticeRepository noticeRepository;
 
-    public void save(Notice notice)
-    {
+    public Notice save(Notice notice) {
         noticeRepository.save(notice);
+        return notice;
     }
 
-    public List<Notice> findAll()
-    {
-        return noticeRepository.findAll(Sort.by(Sort.Direction.DESC,"id"));
+    public List<Notice> findAll() {
+        return noticeRepository.findAll(Sort.by(Sort.Direction.DESC, "id"));
 
     }
 
-
+    public Optional<Notice> findById(Long id) {
+        return noticeRepository.findById(id);
+    }
 
 }
