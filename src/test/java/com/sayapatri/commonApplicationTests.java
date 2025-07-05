@@ -1,10 +1,10 @@
-package com.sayapatri.parasi1;
+package com.sayapatri;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Parasi1ApplicationTests {
+class commonApplicationTests {
 
     @Test
     void contextLoads() {

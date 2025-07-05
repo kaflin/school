@@ -1,4 +1,4 @@
-package com.sayapatri.parasi1.Configuration;
+package com.sayapatri.Configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/feedBackList", "/adminlist","/form").hasRole("ADMIN")
+                .antMatchers("/feedBackList", "/adminList","/form").hasRole("ADMIN")
                 .antMatchers("/**").permitAll()
                 .anyRequest().authenticated()
                 .and()

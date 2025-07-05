@@ -1,7 +1,7 @@
-package com.sayapatri.parasi1.Service;
+package com.sayapatri.Service;
 
-import com.sayapatri.parasi1.Model.Notice;
-import com.sayapatri.parasi1.Repository.NoticeRepository;
+import com.sayapatri.Model.Notice;
+import com.sayapatri.Repository.NoticeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;

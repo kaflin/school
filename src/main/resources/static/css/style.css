@@ -159,10 +159,11 @@ body {
 }
 
 .wrapper17 {
-    height: 395px;
-    /* border:1px solid red; */
-    /* background-color:rgb(92, 147, 165); */
-}
+           background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+           padding: 20px;
+           height: 345px;
+
+ }
 
 .dot1 {
     height: 100px;
