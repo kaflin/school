@@ -1,9 +1,9 @@
-package com.sayapatri.parasi1.Controller;
+package com.sayapatri.Controller;
 
-import com.sayapatri.parasi1.Model.feedback;
-import com.sayapatri.parasi1.Repository.FeedbackRepositry;
-import com.sayapatri.parasi1.Service.NoticeService;
-import com.sayapatri.parasi1.Service.feedbackService;
+import com.sayapatri.Model.feedback;
+import com.sayapatri.Repository.FeedbackRepository;
+import com.sayapatri.Service.NoticeService;
+import com.sayapatri.Service.feedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +27,7 @@ public class FeedbackController {
     private feedbackService fbs;
 
     @Autowired
-    private FeedbackRepositry feedbackRepositry;
+    private FeedbackRepository feedbackRepositry;
 
     @Autowired
     private NoticeService noticeService;

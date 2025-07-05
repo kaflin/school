@@ -1,4 +1,4 @@
-package com.sayapatri.parasi1.Model;
+package com.sayapatri.Model;
 
 public class ReCaptchaResponse {
     private boolean success;
