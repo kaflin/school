@@ -10,55 +10,45 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
-//@RequestMapping("/notice/")
 public class AllController {
     @Autowired
     private NoticeRepository noticeRepository;
     @Autowired
     private NoticeService noticeService;
 
-    @GetMapping("/principaldesk")
-    public String showPrincipal(Notice notice)
-    {
+    @GetMapping("/principalDesk")
+    public String showPrincipal(Notice notice) {
         return "principal";
     }
 
    @GetMapping("/faculty")
-    public String showFaculty(Notice notice)
-    {
+    public String showFaculty(Notice notice) {
 
         return "faculty";
     }
 
     @GetMapping("/admin")
-    public String showAdmin(Notice notice)
-    {
+    public String showAdmin(Notice notice) {
         return "admission";
     }
 
     @GetMapping("/infra")
-    public String showInfra(Notice notice)
-    {
+    public String showInfra(Notice notice) {
         return "infrastructures";
     }
 
     @GetMapping("/affil")
-    public String showAffiliation(Notice notice)
-
-    {
+    public String showAffiliation(Notice notice) {
         return "affiliation";
     }
 
     @GetMapping("/home")
-    public String showHome(Model model)
-    {
+    public String showHome(Model model) {
         model.addAttribute("notices",noticeService.findAll());
         return "index";
     }
     @GetMapping("/houseSystem")
-    public String showHouseSystem(Notice notice)
-
-    {
+    public String showHouseSystem(Notice notice) {
         return "HouseSystem";
     }
     @GetMapping("/schoolTransport")
@@ -68,16 +58,12 @@ public class AllController {
     }
 
     @GetMapping("/attendance")
-    public String showAttendance(Notice notice)
-
-    {
+    public String showAttendance(Notice notice) {
         return "Attendance";
     }
 
     @GetMapping("/sports")
-    public String showSports(Notice notice)
-
-    {
+    public String showSports(Notice notice) {
         return "Sports";
     }
 
@@ -90,35 +76,27 @@ public class AllController {
     }
 
     @GetMapping("/curriculum")
-    public String showCurriculum(Notice notice)
-
-    {
+    public String showCurriculum(Notice notice) {
         return "Curriculum";
     }
 
     @GetMapping("/studentcouncil")
-    public String showStudentCouncil(Notice notice)
-
-    {
+    public String showStudentCouncil(Notice notice) {
         return "StudentCouncil";
     }
 
     @GetMapping("/cocurricular")
-    public String showCoCurricular(Notice notice)
-
-    {
+    public String showCoCurricular(Notice notice) {
         return "cocurricular";
     }
 
     @GetMapping("/gallery")
-    public String showGallery(Notice notice)
-
-    {
+    public String showGallery(Notice notice) {
         return "Gallery";
     }
 
 
-    @GetMapping("/readmore")
+    @GetMapping("/readMore")
     public String showReadMore(Notice notice)
 
     {
@@ -128,16 +106,15 @@ public class AllController {
 
 
 
-    @GetMapping("/fullnotice/{id}")
-    public String showFullnotice(@PathVariable("id") long id, Model model)
-    {
+    @GetMapping("/fullNotice/{id}")
+    public String showFullNotice(@PathVariable("id") long id, Model model) {
 
         Notice notice=noticeRepository.findById(id)
         .orElseThrow(()->new IllegalArgumentException("Invalid notice Id:"+id));
         System.out.println(noticeRepository.findById(id));
 
-        model.addAttribute("noticess",notice);
-        return "fullnotice";
+        model.addAttribute("notices",notice);
+        return "fullNotice";
     }
 
 
