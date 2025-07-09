@@ -21,7 +21,6 @@ import java.io.IOException;
 import java.util.List;
 
 @Controller
-//@RequestMapping("/notice/")
 public class NoticeController {
 
     @Autowired
@@ -74,8 +73,7 @@ public class NoticeController {
 
     @RolesAllowed("ADMIN")
     @GetMapping("/adminList")
-    public String showAdminNoticeList(Model model)
-    {
+    public String showAdminNoticeList(Model model) {
         model.addAttribute("notices",noticeService.findAll());
         return "message";
     }
@@ -83,8 +81,7 @@ public class NoticeController {
 
 
     @GetMapping("/edit/{id}")
-    public String showUpdateForm(@PathVariable("id") long id, Model model)
-    {
+    public String showUpdateForm(@PathVariable("id") long id, Model model) {
         Notice notice=noticeRepository.findById(id)
                 .orElseThrow(()->new IllegalArgumentException("Invalid notice Id:"+id));
         List<Attachments> attachments = attachmentsRepository.findByNoticeId(id); // You need this method

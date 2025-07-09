@@ -19,16 +19,28 @@
             <div class="card" style="height:200px; background-color: #474361;color:white;">
                 <strong><p th:text="${y.message}" style="margin-left:15px;margin-top:15px;"></p></strong>
                 <!-- Show attachment links -->
-                <div th:if="${y.attachments != null}">
-                    <ul style="margin-left: 15px;">
-                        <li th:each="att : ${y.attachments}">
-                            <a th:href="@{/attachments/download/{id}(id=${att.id})}"
-                               th:text="${att.fileName}"
-                               style="color: #000000;"
-                               target="_blank">
-                            </a>
-                        </li>
-                    </ul>
+<!--                <div th:if="${y.attachments != null}">-->
+<!--                    <ul style="margin-left: 15px;">-->
+<!--                        <li th:each="att : ${y.attachments}">-->
+<!--                            <a th:href="@{/attachments/download/{id}(id=${att.id})}"-->
+<!--                               th:text="${att.fileName}"-->
+<!--                               style="color: #000000;"-->
+<!--                               target="_blank">-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+                <!-- Display all attachments (images) for a notice -->
+                <div class="carousel-wrapper">
+                    <button class="carousel-arrow left" onclick="scrollCarousel(-1)">&#8592;</button>
+
+                    <div class="carousel-container" id="carousel">
+                        <div th:each="attachment : ${y.attachments}">
+                            <img th:src="@{'/attachments/' + ${attachment.id}}" alt="Notice Image" width="300">
+                        </div>
+                    </div>
+
+                    <button class="carousel-arrow right" onclick="scrollCarousel(1)">&#8594;</button>
                 </div>
             </div>
         </div>
@@ -37,3 +49,61 @@
 <div th:replace="header::footer"></div>
 </body>
 </html>
+
+<script>
+    function scrollCarousel(direction) {
+        const container = document.getElementById("carousel");
+        const scrollAmount = 120; // Pixels per click
+        container.scrollLeft += direction * scrollAmount;
+    }
+</script>
+<style>
+    .carousel-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 10px 40px;
+        box-sizing: border-box;
+    }
+
+    .carousel-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        gap: 12px;
+        padding: 10px 0;
+    }
+
+    .carousel-container::-webkit-scrollbar {
+        display: none; /* hide scrollbar */
+    }
+
+    .carousel-container img {
+        max-height: 100px;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 6px 12px;
+        z-index: 2;
+        border-radius: 50%;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .carousel-arrow.left {
+        left: 0;
+    }
+
+    .carousel-arrow.right {
+        right: 0;
+    }
+</style>

@@ -5,12 +5,14 @@ import com.sayapatri.Model.Notice;
 import com.sayapatri.Repository.AttachmentsRepository;
 import com.sayapatri.Repository.NoticeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
+import java.util.Optional;
 
 @RestController
 public class AttachmentsController {
@@ -63,6 +65,18 @@ public class AttachmentsController {
         attachmentRepository.deleteById(id);
         return ResponseEntity.ok("Attachment deleted successfully");
 
+    }
+    @GetMapping("/attachments/{id}")
+    @ResponseBody
+    public ResponseEntity<byte[]> getAttachment(@PathVariable Long id) {
+        Optional<Attachments> attachment = attachmentRepository.findById(id);
+        if (attachment.isPresent()) {
+            return ResponseEntity.ok()
+                    .contentType(MediaType.parseMediaType(attachment.get().getFileType()))
+                    .body(attachment.get().getData());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 }
