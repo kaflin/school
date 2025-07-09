@@ -1,8 +1,8 @@
 services:
-  - type: web
+  - type: service
     name: school-java-app
     plan: free
-    runtime: docker
+    buildCommand: ./mvnw clean package
+    startCommand: java -jar target/parasi-0.0.1-SNAPSHOT.jar
     branch: master
-    buildCommand: ./mvnw package
     autoDeploy: true
