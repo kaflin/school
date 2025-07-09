@@ -1,5 +1,5 @@
 services:
-  - type: service
+  - type: web
     name: school-java-app
     plan: free
     buildCommand: ./mvnw clean package
