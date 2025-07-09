@@ -1,4 +1,4 @@
-package com.sayapatri.parasi1.Model;
+package com.sayapatri.Model;
 
 import javax.persistence.*;
 
