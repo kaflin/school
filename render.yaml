@@ -1,7 +1,6 @@
 services:
   - type: web
     name: school-java-app
-    env: java
     plan: free
     branch: master
     buildCommand: ./mvnw package
