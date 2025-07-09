@@ -1,10 +1,10 @@
-package com.sayapatri.parasi1.Controller;
+package com.sayapatri.Controller;
 
-import com.sayapatri.parasi1.Model.Attachments;
-import com.sayapatri.parasi1.Model.Notice;
-import com.sayapatri.parasi1.Repository.AttachmentsRepository;
-import com.sayapatri.parasi1.Repository.NoticeRepository;
-import com.sayapatri.parasi1.Service.NoticeService;
+import com.sayapatri.Model.Attachments;
+import com.sayapatri.Model.Notice;
+import com.sayapatri.Repository.AttachmentsRepository;
+import com.sayapatri.Repository.NoticeRepository;
+import com.sayapatri.Service.NoticeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
