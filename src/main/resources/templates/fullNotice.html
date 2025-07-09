@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
-<div th:replace="header::superHeader"></div>
 
-<link th:href="@{/css/style.css}" type="text/css" rel="stylesheet"/>
-<link th:href="@{/css/fullNotice.css}" type="text/css" rel="stylesheet"/>
+<head>
+    <meta charset="UTF-8">
+    <title>Notice Detail</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link th:href="@{/css/fullNotice.css}" rel="stylesheet" />
+</head>
 
 <body>
+<div th:replace="header::superHeader"></div>
 <div th:replace="header::navbar"></div>
 <div th:replace="header::logo"></div>
+
 <div class="container" id="fullNotice">
 
-    <div class="col-lg-12 col-md-12 col-sm-12">
-        <div th:each="y:${notices}">
-            <div class="card" style="margin-top:15px; background-color: #474361;color:white;">
-                <h1 th:text="${y.title}" style="margin-left:15px;"></h1>
-                <strong><p th:text="${y.createdDate}" style="text-align: center;"></p></strong>
-            </div>
-            <div class="card" style="height:200px; background-color: #474361;color:white;">
-                <strong><p th:text="${y.message}" style="margin-left:15px;margin-top:15px;"></p></strong>
-                <!-- Show attachment links -->
-<!--                <div th:if="${y.attachments != null}">-->
-<!--                    <ul style="margin-left: 15px;">-->
-<!--                        <li th:each="att : ${y.attachments}">-->
-<!--                            <a th:href="@{/attachments/download/{id}(id=${att.id})}"-->
-<!--                               th:text="${att.fileName}"-->
-<!--                               style="color: #000000;"-->
-<!--                               target="_blank">-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-                <!-- Display all attachments (images) for a notice -->
-                <div class="carousel-wrapper">
-                    <button class="carousel-arrow left" onclick="scrollCarousel(-1)">&#8592;</button>
 
-                    <div class="carousel-container" id="carousel">
-                        <div th:each="attachment : ${y.attachments}">
-                            <img th:src="@{'/attachments/' + ${attachment.id}}" alt="Notice Image" width="300">
-                        </div>
-                    </div>
+    <!-- Notice Section -->
+    <div class="col-lg-8 col-md-8 col-sm-8" th:each="y:${notices}">
+        <!-- Page Heading -->
+        <h2 style="color: #333;">Detail About Notice</h2>
+        <!-- Title and Date -->
+        <h3 th:text="${y.title}" style="margin-top: 10px;font-size: 25px;color: #474361;"></h3>
+        <p style="font-weight: bold;" th:text="${y.createdDate}"></p>
+        <!-- Message -->
+        <p th:text="${y.message}" style="margin-top: 10px;color: #333;"></p>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4" th:each="y:${notices}">
 
-                    <button class="carousel-arrow right" onclick="scrollCarousel(1)">&#8594;</button>
+
+    <!-- Attachments Carousel -->
+        <div th:if="${y.attachments != null && !#lists.isEmpty(y.attachments)}" class="carousel-wrapper mt-3">
+            <button class="carousel-arrow left" onclick="scrollCarousel(-1)">&#8592;</button>
+
+            <div class="carousel-container" id="carousel">
+                <div th:each="attachment : ${y.attachments}">
+                    <img th:src="@{'/attachments/' + ${attachment.id}}" alt="Notice Image" width="800" height="1200">
                 </div>
             </div>
+
+            <button class="carousel-arrow right" onclick="scrollCarousel(1)">&#8594;</button>
         </div>
     </div>
 </div>
+
 <div th:replace="header::footer"></div>
 </body>
-</html>
 
+<!-- Carousel JavaScript -->
 <script>
     function scrollCarousel(direction) {
         const container = document.getElementById("carousel");
-        const scrollAmount = 120; // Pixels per click
+        const scrollAmount = 300;
         container.scrollLeft += direction * scrollAmount;
     }
 </script>
+
+<!-- Carousel Styles -->
 <style>
     .carousel-wrapper {
         position: relative;
         width: 100%;
-        max-width: 100%;
         overflow: hidden;
         padding: 10px 40px;
         box-sizing: border-box;
@@ -76,34 +75,24 @@
     }
 
     .carousel-container::-webkit-scrollbar {
-        display: none; /* hide scrollbar */
+        display: none;
     }
 
     .carousel-container img {
-        max-height: 100px;
+        max-height: 120px;
         border-radius: 8px;
         flex-shrink: 0;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     }
 
     .carousel-arrow {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-color: rgba(255, 255, 255, 0.8);
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        padding: 6px 12px;
-        z-index: 2;
-        border-radius: 50%;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        background-color: rgba
+}
     }
-
-    .carousel-arrow.left {
-        left: 0;
-    }
-
-    .carousel-arrow.right {
-        right: 0;
     }
 </style>
+</html>
+
