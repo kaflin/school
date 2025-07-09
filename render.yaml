@@ -3,7 +3,7 @@ services:
     name: school-java-app
     env: java
     plan: free
-    branch: main
+    branch: master
     buildCommand: ./mvnw package
     startCommand: java -jar target/parasi-0.0.1-SNAPSHOT.jar
     autoDeploy: true
