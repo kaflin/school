@@ -62,7 +62,7 @@ public class AttachmentsController {
                 .orElseThrow(() -> new RuntimeException("Attachment not found"));
 
         Long noticeId = attachment.getNotice().getId(); // get the notice ID before deleting
-        attachmentRepository.deleteById(id);
+        attachmentRepository.deleteById(noticeId);
         return ResponseEntity.ok("Attachment deleted successfully");
 
     }

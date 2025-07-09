@@ -27,7 +27,7 @@ public class FeedbackController {
     private feedbackService fbs;
 
     @Autowired
-    private FeedbackRepository feedbackRepositry;
+    private FeedbackRepository feedbackRepository;
 
     @Autowired
     private NoticeService noticeService;
@@ -69,7 +69,7 @@ public String addFeedBack(@Valid feedback feedback, BindingResult result, Model 
     {
         return "index";
     }
-  feedbackRepositry.save(feedback);
+  feedbackRepository.save(feedback);
     return "redirect:/";
 }
 

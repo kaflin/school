@@ -15,9 +15,11 @@ public class Notice {
     private long id;
 
     @NotBlank(message = "Title is mandatory")
+    @Column(length = 200)
     private String title;
 
     @NotBlank(message = "Message is mandatory")
+    @Column(length = 4000)
     private String message;
 
     @Temporal(TemporalType.DATE)
