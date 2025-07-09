@@ -68,12 +68,12 @@ public class NoticeController {
             }
         }
 
-        return "redirect:/adminlist";
+        return "redirect:/adminList";
     }
 
 
     @RolesAllowed("ADMIN")
-    @GetMapping("/adminlist")
+    @GetMapping("/adminList")
     public String showAdminNoticeList(Model model)
     {
         model.addAttribute("notices",noticeService.findAll());
@@ -134,7 +134,7 @@ public class NoticeController {
             }
         }
 
-        return "redirect:/adminlist";
+        return "redirect:/adminList";
     }
 
 
@@ -144,6 +144,6 @@ public class NoticeController {
                 .orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
         noticeRepository.delete(notice);
         model.addAttribute("students", noticeRepository.findAll());
-        return "redirect:/adminlist";
+        return "redirect:/adminList";
     }
 }
