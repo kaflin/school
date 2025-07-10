@@ -3,10 +3,7 @@ package com.sayapatri.Model;
 import lombok.Data;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -22,18 +19,11 @@ public class feedback {
     private String email;
 
 
+    @Column(length = 4000)
     private String message;
 
-
     private String phone;
-
-
-
-
-    public feedback()
-    {
-
-    }
+    public feedback(){}
     public feedback(String email,String message,String phone) {
         this.email=email;
         this.message=message;

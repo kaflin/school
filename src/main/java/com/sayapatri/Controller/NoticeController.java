@@ -32,9 +32,8 @@ public class NoticeController {
     @Autowired
     private AttachmentsRepository attachmentsRepository;
 
-   @GetMapping("/form")
-    public String showNoticeForm(Notice notice)
-    {
+    @GetMapping("/form")
+    public String showNoticeForm(Notice notice) {
       return "form";
     }
 
@@ -74,19 +73,18 @@ public class NoticeController {
     @RolesAllowed("ADMIN")
     @GetMapping("/adminList")
     public String showAdminNoticeList(Model model) {
-        model.addAttribute("notices",noticeService.findAll());
+        model.addAttribute("notices", noticeService.findAll());
         return "message";
     }
 
 
-
     @GetMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
-        Notice notice=noticeRepository.findById(id)
-                .orElseThrow(()->new IllegalArgumentException("Invalid notice Id:"+id));
+        Notice notice = noticeRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid notice Id:" + id));
         List<Attachments> attachments = attachmentsRepository.findByNoticeId(id); // You need this method
 
-        model.addAttribute("notice",notice);
+        model.addAttribute("notice", notice);
         model.addAttribute("attachments", attachments);
         return "update-notice";
 
@@ -137,7 +135,7 @@ public class NoticeController {
 
     @GetMapping("/delete/{id}")
     public String deleteStudent(@PathVariable("id") long id, Model model) {
-        Notice notice=noticeRepository.findById(id)
+        Notice notice = noticeRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid student Id:" + id));
         noticeRepository.delete(notice);
         model.addAttribute("students", noticeRepository.findAll());

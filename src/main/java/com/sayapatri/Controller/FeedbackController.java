@@ -14,14 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
-//import org.springframework.web.client.RestTemplate;
-
-//import net.tanesha.recaptcha.ReCaptchaResponse;
 
 @Controller
 public class FeedbackController {
 
-    private String message1;
+    String message;
 
     @Autowired
     private feedbackService fbs;
@@ -32,55 +29,29 @@ public class FeedbackController {
     @Autowired
     private NoticeService noticeService;
 
-//    @Autowired
-//    private RestTemplate restTemplate;
-
 
     @GetMapping("/")
-    public String showFeedback(Model model)
-    {
-        message1=null;
-        model.addAttribute("notices",noticeService.findAll());
+    public String showFeedback(Model model) {
+        message = null;
+        model.addAttribute("notices", noticeService.findAll());
         return "index";
     }
 
-//    @PostMapping("/addFeedback")
-//    public String addFeedback(feedback fb,  Model model, @RequestParam(name="g-recaptcha-response") String captchaResponse) {
-//
-//        model.addAttribute("feedback", fb);
-//        String url = "https://www.google.com/recaptcha/api/siteverify";
-//        String params = "?secret=6Lc4C64ZAAAAAJTZOPbVbXmyXcs9dpl9tcsxW-wI&response=" + captchaResponse;
-//
-//        ReCaptchaResponse reCaptchaResponse = restTemplate.exchange(url + params, HttpMethod.POST, null, ReCaptchaResponse.class).getBody();
-////        model.addAttribute("feedback", fb);
-//
-//        if (reCaptchaResponse.isSuccess()) {
-//            feedbackRepositry.save(fb);
-//            return "redirect:/";
-//        } else {
-//            message1 = "Please verify captcha";
-//            return "redirect:/";
-//        }
-//    }
-@PostMapping("/addFeedback")
-public String addFeedBack(@Valid feedback feedback, BindingResult result, Model model)
-{
-    if(result.hasErrors())
-    {
-        return "index";
+    @PostMapping("/addFeedback")
+    public String addFeedBack(@Valid feedback feedback, BindingResult result) {
+        if (result.hasErrors()) {
+            return "index";
+        }
+        feedbackRepository.save(feedback);
+        return "redirect:/";
     }
-  feedbackRepository.save(feedback);
-    return "redirect:/";
-}
 
 
     @RolesAllowed("ADMIN")
     @RequestMapping("/feedBackList")
-    public String showAdminFeedBackList(Model model)
-    {
-        model.addAttribute("feedBack",fbs.findAll());
+    public String showAdminFeedBackList(Model model) {
+        model.addAttribute("feedBack", fbs.findAll());
         return "feedback";
-//        return "security/login";
     }
 }
 

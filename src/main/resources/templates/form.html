@@ -21,7 +21,7 @@
     <form action="#" th:action="@{/add}" enctype="multipart/form-data" th:object="${notice}" method="post">
         <div class="form-group">
             <label for="title" class="col-form-label">Title*</label>
-            <input type="text" class="form-control" id="title" th:field="*{title}" placeholder="Enter the title" maxlength="400" ><span
+            <input type="text" class="form-control" id="title" th:field="*{title}" placeholder="Enter the title" maxlength="200" ><span
                 th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="text-danger"></span>
         </div>
 
