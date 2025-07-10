@@ -15,13 +15,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("admin").password(passwordEncoder().encode("admin")).roles("ADMIN");
+                .withUser("admin")
+                .password(passwordEncoder().encode("admin"))
+                .roles("ADMIN");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .csrf().disable()
+//                .csrf().disable()// Enable CSRF in production!
                 .authorizeRequests()
                 .antMatchers("/feedBackList", "/adminList","/form").hasRole("ADMIN")
                 .antMatchers("/**").permitAll()
