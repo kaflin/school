@@ -1,4 +1,6 @@
 FROM eclipse-temurin:17-jdk-jammy
+# OR if needed:
+FROM eclipse-temurin:11-jdk-jammy  # For Java 11
 
 WORKDIR /app
 
