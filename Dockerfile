@@ -1,21 +1,21 @@
-# Use an official OpenJDK runtime as the base image
 FROM eclipse-temurin:17-jdk-jammy
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Maven wrapper and pom.xml first (for caching)
+# Copy only the files needed for dependency resolution first (better caching)
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 
-# Download dependencies (cached unless pom.xml changes)
-RUN ./mvnw dependency:go-offline
+# Set permissions and download dependencies
+RUN chmod +x mvnw && \
+    ./mvnw dependency:go-offline
 
-# Copy the rest of the source code
+# Copy remaining source files
 COPY src ./src
 
-# Build the application
-RUN ./mvnw package -DskipTests
+# Build with retry in case of network issues
+RUN ./mvnw package -DskipTests || \
+    (sleep 10 && ./mvnw package -DskipTests) || \
+    (sleep 30 && ./mvnw package -DskipTests)
 
-# Run the JAR when the container starts
-CMD ["java", "-jar", "target/parasi-0.0.1-SNAPSHOT.jar"]  # Adjust JAR name
+CMD ["java", "-jar", "target/parasi-0.0.1-SNAPSHOT.jar"]
