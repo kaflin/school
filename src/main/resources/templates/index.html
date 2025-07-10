@@ -607,30 +607,30 @@
     <div th:replace="header::footer"></div>
 
 
-    <div class="container-fluid" style="margin:0;padding:0;height:350px;">
-        <div class="row">
-            <div class="col-md-12" style="height:350px;" id="map"></div>
-            <script>
-                function initMap() {
-                    var location = {
-                        lat: 27.54464,
-                        lng: 83.66974
-                    };
-                    var map = new google.maps.Map(document.getElementById("map"), {
-                        zoom: 18,
-                        center: location
-                    });
-                    var marker = new google.maps.Marker({
-                        position: location,
-                        map: map
+<!--    <div class="container-fluid" style="margin:0;padding:0;height:350px;">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12" style="height:350px;" id="map"></div>-->
+<!--            <script>-->
+<!--                function initMap() {-->
+<!--                    var location = {-->
+<!--                        lat: 27.54464,-->
+<!--                        lng: 83.66974-->
+<!--                    };-->
+<!--                    var map = new google.maps.Map(document.getElementById("map"), {-->
+<!--                        zoom: 18,-->
+<!--                        center: location-->
+<!--                    });-->
+<!--                    var marker = new google.maps.Marker({-->
+<!--                        position: location,-->
+<!--                        map: map-->
 
 
-                    });
+<!--                    });-->
 
-                }
-            </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuqy987flsEa3IixhYKZlsHt7QAVCMJXw&callback=initMap"></script>
-        </div>
+<!--                }-->
+<!--            </script>-->
+<!--            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuqy987flsEa3IixhYKZlsHt7QAVCMJXw&callback=initMap"></script>-->
+<!--        </div>-->
     </div>
 
 
