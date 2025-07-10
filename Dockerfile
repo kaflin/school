@@ -1,6 +1,8 @@
 FROM eclipse-temurin:8-jdk
 
 WORKDIR /app
+# Install git (needed for some Maven dependencies)
+RUN apt-get update && apt-get install -y git
 
 # Copy only the files needed for dependency resolution first (better caching)
 COPY .mvn/ .mvn
