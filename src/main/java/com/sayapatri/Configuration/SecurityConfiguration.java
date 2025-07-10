@@ -23,7 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-                .csrf().disable()// Enable CSRF in production!
+//                .csrf().disable()// Enable CSRF in production!
                 .authorizeRequests()
                 .antMatchers("/feedBackList", "/adminList","/form").hasRole("ADMIN")
                 .antMatchers("/**").permitAll()
