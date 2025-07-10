@@ -1,6 +1,4 @@
 FROM eclipse-temurin:17-jdk-jammy
-# OR if needed:
-FROM eclipse-temurin:11-jdk-jammy  # For Java 11
 
 WORKDIR /app
 
@@ -14,6 +12,11 @@ RUN chmod +x mvnw && \
 
 # Copy remaining source files
 COPY src ./src
+
+# Build with Lombok fixes
+RUN ./mvnw package -DskipTests \
+    -Djdk.tls.client.protocols=TLSv1.2 \
+    -J--add-opens=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED
 
 # Build with retry in case of network issues
 RUN ./mvnw package -DskipTests || \
