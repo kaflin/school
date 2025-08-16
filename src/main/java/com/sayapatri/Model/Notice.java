@@ -1,5 +1,4 @@
 package com.sayapatri.Model;
-
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;

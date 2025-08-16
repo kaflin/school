@@ -34,7 +34,7 @@ public class AllController {
         return "infrastructures";
     }
 
-    @GetMapping("/affil")
+    @GetMapping("/affiliation")
     public String showAffiliation() {
         return "affiliation";
     }
