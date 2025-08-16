@@ -24,12 +24,12 @@ public class AllController {
     @GetMapping("/faculty")
     public String showFaculty() {return "faculty";}
 
-    @GetMapping("/admin")
+    @GetMapping("/admission")
     public String showAdmin() {
         return "admission";
     }
 
-    @GetMapping("/infra")
+    @GetMapping("/infrastructures")
     public String showInfra() {
         return "infrastructures";
     }
@@ -47,38 +47,38 @@ public class AllController {
 
     @GetMapping("/houseSystem")
     public String showHouseSystem() {
-        return "HouseSystem";
+        return "houseSystem";
     }
 
     @GetMapping("/schoolTransport")
     public String showSchoolTransport() {
-        return "SchoolTransport";
+        return "schoolTransport";
     }
 
     @GetMapping("/attendance")
     public String showAttendance() {
-        return "Attendance";
+        return "attendance";
     }
 
     @GetMapping("/sports")
     public String showSports() {
-        return "Sports";
+        return "sports";
     }
 
 
     @GetMapping("/project")
     public String showProjectWork() {
-        return "ProjectWork";
+        return "projectWork";
     }
 
     @GetMapping("/curriculum")
     public String showCurriculum() {
-        return "Curriculum";
+        return "curriculum";
     }
 
     @GetMapping("/studentCouncil")
     public String showStudentCouncil() {
-        return "StudentCouncil";
+        return "studentCouncil";
     }
 
     @GetMapping("/cocurricular")
@@ -88,13 +88,13 @@ public class AllController {
 
     @GetMapping("/gallery")
     public String showGallery() {
-        return "Gallery";
+        return "gallery";
     }
 
 
     @GetMapping("/readMore")
     public String showReadMore() {
-        return "ReadMore";
+        return "readMore";
     }
 
     @GetMapping("/fullNotice/{id}")
