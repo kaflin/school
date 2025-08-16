@@ -61,7 +61,7 @@
 
 </div>
 <div class="container-fluid" style="margin:0;padding:0;">
-    <div class="wrapper2">
+    <div class="carousel">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!--Indicators -->
             <ol class="carousel-indicators">
@@ -73,29 +73,21 @@
 
 
             <div class="carousel-inner">
-
-
                 <div class="item active">
                     <img src="../images/suraj2.jpg" alt="Los Angeles" class="img-responsive"
                          style="width:100%;height:500px;">
                     <div class="carousel-caption">
                     </div>
                 </div>
-
-
                 <div class="item">
                     <img src="../images/suraj20.jpg" alt="Los Angeles" class="img-responsive"
                          style="width:100%;height:500px;">
-
                 </div>
-
                 <div class="item">
                     <img src="../images/suraj21.png" alt="Los Angeles" class="img-responsive"
                          style="width:100%;height:500px;">
-
                 </div>
             </div>
-
 
             <!-- Left and right Slider controls -->
             <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -192,9 +184,7 @@
 </div>
 <br>
 <br>
-
-
-<div class="container" id="Process_top">
+<div class="container" id="process_id_submodule">
     <div class="row">
         <div class="col-sm-4 col-md-4 col-lg-4">
             <a th:href="@{/admin}" style="text-decoration:none;">
@@ -211,7 +201,7 @@
             </a>
 
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4" id="process_a">
+        <div class="col-sm-4 col-md-4 col-lg-4">
             <a th:href="@{/infra}" style="text-decoration:none;">
                 <div class="process_submodule" style="box-shadow: 5px 5px 5px grey;">
                     <img src="../images/sa_1.jpg" alt="school kid" style="width:100%;height:345px;">
@@ -328,8 +318,6 @@
     </div>
     <br>
     <div class="row">
-
-
         <div class=" col-md-3 col-sm-6 col-lg-3 ">
                 <span class="schoolFeature">
                 <a th:href="@{/sports}" style="text-decoration:none;">
@@ -338,11 +326,8 @@
                                              style="font-size:24px;margin-left:40px;margin-top:35px;"></i></span>
                         <h2 class="textSizeAndFont" style="text-align:center">Sports and Games</h2>
                         <p class="textSizeAndFont"><b>Students are encouraged to play sports and games to involve them</b></p>
-
-
                     </div>
                 </a>
-
                 </span>
         </div>
         <div class="col-md-3 col-sm-6 col-lg-3 ">
@@ -379,14 +364,11 @@
                     <div class="wrapper6" style="box-shadow: 5px 5px 5px grey;">
                         <span class="dot"><i class="fa fa-user"
                                              style="font-size:24px;margin-left:40px;margin-top:35px;"></i></span>
-
                         <h2 class="textSizeAndFont" style="text-align:center">Co-curricular activites</h2>
                         <p class="textSizeAndFont"><b>There are 5 child club for communications among the students</b></p>
                     </div>
                 </a>
             </span>
-
-
         </div>
 
 
@@ -607,40 +589,14 @@
     <br><br>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <div th:replace="header::footer"></div>
-
-
-<!--    <div class="container-fluid" style="margin:0;padding:0;height:350px;">-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-12" style="height:350px;" id="map"></div>-->
-<!--            <script>-->
-<!--                function initMap() {-->
-<!--                    var location = {-->
-<!--                        lat: 27.54464,-->
-<!--                        lng: 83.66974-->
-<!--                    };-->
-<!--                    var map = new google.maps.Map(document.getElementById("map"), {-->
-<!--                        zoom: 18,-->
-<!--                        center: location-->
-<!--                    });-->
-<!--                    var marker = new google.maps.Marker({-->
-<!--                        position: location,-->
-<!--                        map: map-->
-
-
-<!--                    });-->
-
-<!--                }-->
-<!--            </script>-->
-<!--            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuqy987flsEa3IixhYKZlsHt7QAVCMJXw&callback=initMap"></script>-->
-<!--        </div>-->
     </div>
 </body>
 
 </html>
 <script>
     $(document).ready(function() {
-        $("#Process_top").hide("fast");
-        $("#Process_top").show("slow");
+        $("#process_id_submodule").hide("fast");
+        $("#process_id_submodule").show("slow");
 
         $("#galleryBox").hide("fast");
         $("#galleryBox").show("slow");

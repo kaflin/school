@@ -30,12 +30,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin();
-        // @.loginPage("/login")
-        // .usernameParameter("u").passwordParameter("p")
-        // .permitAll()
-        // .and()
-        // .logout().permitAll();
-
     }
 
     @Bean
