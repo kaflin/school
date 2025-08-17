@@ -18,57 +18,77 @@
 
     <!-- Notice Section -->
     <div class="col-lg-6 col-md-6 col-sm-6" th:each="y:${notices}">
-        <!-- Title and Date -->
-        <h3 th:text="${y.title}" style="margin-top: 10px;font-size: 25px;color: #474361;"></h3>
-        <p style="font-weight: bold;" th:text="${y.createdDate}"></p>
-        <!-- Message -->
-        <p th:text="${y.message}" style="margin-top: 10px;color: #333;"></p>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6" th:each="y:${notices}">
+        <!-- Attachments Carousel -->
+        <div th:if="${y.attachments != null && !#lists.isEmpty(y.attachments)}" class="carousel-wrapper">
+            <!-- Title and Date -->
+            <h3 th:text="${y.title}" style="margin-top: 10px;font-size: 25px;color: #474361;"></h3>
+            <p style="font-weight: bold;" th:text="${y.createdDate}"></p>
 
+            <button class="carousel-arrow left" th:attr="onclick='scrollCarousel(' + ${y.id} + ', -1)'">&#10094;</button>
 
-    <!-- Attachments Carousel -->
-        <div th:if="${y.attachments != null && !#lists.isEmpty(y.attachments)}" class="carousel-wrapper mt-3">
-            <button class="carousel-arrow left" onclick="scrollCarousel(-1)">&#8592;</button>
-
-            <div class="carousel-container" id="carousel">
-                <div th:each="attachment : ${y.attachments}">
-                    <img th:src="@{'/attachments/' + ${attachment.id}}" alt="Notice Image" class="responsive-img">
+            <div class="carousel-container" th:id="'carousel-' + ${y.id}" tabindex="0" role="region" aria-label="Notice Attachments">
+                <div th:each="attachment : ${y.attachments}" class="attachment-item">
+                    <img th:src="@{'/attachments/' + ${attachment.id}}" alt="Notice Attachment" class="attachment-img" />
                 </div>
             </div>
 
-            <button class="carousel-arrow right" onclick="scrollCarousel(1)">&#8594;</button>
+            <button class="carousel-arrow right" th:attr="onclick='scrollCarousel(' + ${y.id} + ', 1)'">&#10095;</button>
         </div>
     </div>
+    <div class="col-lg-6 col-md-6 col-sm-6" th:each="y:${notices}">
+        <div th:if="${y.attachments != null && !#lists.isEmpty(y.attachments)}">
+
+            <!-- Message -->
+            <p th:text="${y.message}" style="color: #333;"></p>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12" th:each="y:${notices}">
+        <div th:if="${#lists.isEmpty(y.attachments)}">
+                <!-- Title and Date -->
+                <h3 th:text="${y.title}" style="margin-top: 10px;font-size: 25px;color: #474361;"></h3>
+                <p style="font-weight: bold;" th:text="${y.createdDate}"></p>
+                <!-- Message -->
+                <p th:text="${y.message}" style="color: #333;"></p>
+            </div>
+        </div>
+
+
+
+
 </div>
 
 <div th:replace="header::footer"></div>
 </body>
 
-<!-- Carousel JavaScript -->
 <script>
-    function scrollCarousel(direction) {
-        const container = document.getElementById("carousel");
-        const scrollAmount = 300;
-        container.scrollLeft += direction * scrollAmount;
-    }
+    function scrollCarousel(id, direction) {
+         const container = document.getElementById('carousel-' + id);
+         console.log("Scrolling carousel:", container);
+         if (container) {
+              container.scrollLeft += direction * container.offsetWidth * 1.8;
+         }
+}
 </script>
 
 <!-- Carousel Styles -->
 <style>
     .carousel-wrapper {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        padding: 10px 40px;
-        box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  padding: 10px 40px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  margin-bottom: 8px;
     }
 
     .carousel-container {
         display: flex;
         overflow-x: auto;
         scroll-behavior: smooth;
-        gap: 12px;
+        gap: 20px;
         padding: 10px 0;
     }
 
@@ -76,27 +96,44 @@
         display: none;
     }
 
-    .carousel-container img {
-        max-height: 120px;
-        border-radius: 8px;
+    .attachment-item {
         flex-shrink: 0;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        width: 40vw;
+    }
+
+    .attachment-img {
+        width: 40vw;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s ease;
     }
 
     .carousel-arrow {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-color: rgba
-}
-     .responsive-img {
-       max-width: 100%;
-        width: 100%;
-        height: auto;
-        display: block;
-        margin: 10px auto; /* center and add spacing */
-        border-radius: 8px; /* optional */
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* optional */
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        border: none;
+        font-size: 24px;
+<!--        padding: 8px 12px;-->
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .carousel-arrow.left {
+        left: 5px;
+    }
+
+    .carousel-arrow.right {
+        right: 5px;
+    }
+
+    .carousel-arrow:hover {
+        background-color: rgba(0, 0, 0, 0.6);
     }
 </style>
 </html>

@@ -18,7 +18,7 @@ public class Notice {
     private String title;
 
     @NotBlank(message = "Message is mandatory")
-    @Column(length = 4000)
+    @Column(length = 2000)
     private String message;
 
     @Temporal(TemporalType.DATE)

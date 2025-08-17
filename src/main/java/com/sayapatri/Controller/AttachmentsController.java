@@ -57,13 +57,14 @@ public class AttachmentsController {
                 .body(attachment.getData());
     }
     @GetMapping("/attachments/delete/{id}")
-    public ResponseEntity<String> deleteAttachment(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+    public String deleteAttachment(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         Attachments attachment = attachmentRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Attachment not found"));
 
         Long noticeId = attachment.getNotice().getId(); // get the notice ID before deleting
-        attachmentRepository.deleteById(noticeId);
-        return ResponseEntity.ok("Attachment deleted successfully");
+        attachmentRepository.deleteById(id);
+        redirectAttributes.addFlashAttribute("message", "Attachment deleted successfully.");
+        return "redirect:/notices/" + noticeId;
 
     }
     @GetMapping("/attachments/{id}")
